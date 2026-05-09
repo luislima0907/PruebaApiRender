@@ -33,6 +33,14 @@ app.MapGet("/weatherforecast", () =>
     })
     .WithName("GetWeatherForecast");
 
+// Endpoint sencillo para /User
+app.MapGet("/User", () =>
+{
+    var user = new { Id = 1, Name = "Usuario de ejemplo" };
+    return Results.Ok(user);
+})
+.WithName("GetUser");
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
